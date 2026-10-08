@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-slate-100 text-slate-800 antialiased font-sans;
+  }
+}
+
+@layer components {
+  /* Bento tile — the single card primitive used across every dashboard */
+  .bento {
+    @apply rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 p-4 sm:p-5 transition-shadow hover:shadow-md;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none
+           focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2;
+  }
+  .btn-primary { @apply btn bg-teal-600 text-white hover:bg-teal-700; }
+  .btn-ghost   { @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200; }
+  .btn-danger  { @apply btn bg-rose-50 text-rose-600 hover:bg-rose-100 ring-1 ring-rose-200; }
+  .input {
+    @apply w-full rounded-xl border-slate-300 border px-3 py-2 text-sm bg-white
+           placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/60 focus:border-teal-500;
+  }
+  .label { @apply block text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1.5; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
